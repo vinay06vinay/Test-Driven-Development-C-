@@ -1,10 +1,15 @@
-#include "lib.hpp"
-#include "lib1.hpp"
-#include "lib2.hpp"
+#include "../pid/pid_control.hpp"
+#include <iostream>
+#include <cmath>
 
 int main() {
-  dummy();
-  my_function1(30);
-  my_function2(30.3);
-  return 0;
+  double kp = 1.0;
+  double kd = 0.55;
+  double ki = 0.002;
+  PID::PIDCONTROLLER pid_control(kp,kd,ki);
+  double target_setpoint{2.0};
+  double actual_velocity{20.9};
+  double final_velcoity;
+  final_velcoity = pid_control.compute(double target_setpoint, double actual_velocity);
+
 }
