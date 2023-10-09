@@ -1,5 +1,10 @@
 # Test Drive Development Programming
 
+# CI Coverage Badge:
+![CICD Workflow status](https://codecov.io/gh/vinay06vinay/Test-Driven-Development-ENPM808X/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg)
+
+# C++ Code coverage badges
+[![codecov](https://codecov.io/gh/vinay06vinay/Test-Driven-Development-ENPM808X/branch/main/graph/badge.svg)](https://codecov.io/gh/vinay06vinay/Test-Driven-Development-ENPM808X) 
 ## Authors - TDD - Team 3 - Part 1
 Driver - Vinay Krishna Bukka (vinay06@umd.edu)
 
