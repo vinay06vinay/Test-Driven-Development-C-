@@ -19,5 +19,8 @@ A PID Controller Implementation to implement pid function that calculates the ve
   cmake --build build/
   # Run program:
   ./build/app/shell-app
+
+  # Run tests:
+  cd build/; ctest; cd -
 ```
 

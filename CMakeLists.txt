@@ -91,7 +91,7 @@ endif()
 # ref: https://iamsorush.com/posts/cpp-cmake-essential/
 # ref: https://cmake.org/cmake/help/latest/guide/tutorial/index.html
 #
-add_subdirectory(libs)
+add_subdirectory(pid)
 add_subdirectory(app)
 add_subdirectory(test)
 
@@ -99,8 +99,7 @@ add_subdirectory(test)
 doxygen_add_docs(docs           # target name
   # List of files or directories
   ${PROJECT_SOURCE_DIR}/app
-  ${PROJECT_SOURCE_DIR}/libs
-  ${PROJECT_SOURCE_DIR}/include
+  ${PROJECT_SOURCE_DIR}/pid
   )
 
 # create targets for building code coverage reports
@@ -121,7 +120,7 @@ if(WANT_COVERAGE)
   # Use gcovr insetad of lcov if you want to see branch coverage as well
   setup_target_for_coverage_gcovr_html ( # use gcovr to generate coverage report
     NAME app_coverage          # target name
-    EXECUTABLE shell-app       # what to run insdie the build directory?
+    EXECUTABLE shell-app -pid     # what to run insdie the build directory?
     EXCLUDE
     "test/test.cpp"    # App does not run unit test, so don't analyze it
     "test/main.cpp"    # App does not run unit test, so don't analyze it
