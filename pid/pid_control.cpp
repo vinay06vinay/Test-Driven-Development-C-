@@ -9,6 +9,32 @@
  * @return double
  */
 double PID::PIDCONTROLLER::compute(double target_setpoint,
-                                   double actual_velocity) {
-  return 0.0;
-}
+                                   double actual_velocity)
+   double previous_error = 0;
+   double current_error = 0;
+   double total_error = 0;
+   double time = 10;
+   double final_velocity;
+   for (int dt = 1; dt <= time; dt++) {
+      
+      // calculating the error
+      current_error = target_setpoint - actual_velocity;
+
+      // calculating the derivative error
+      double derivative_error = abs(current_error - previous_error);
+
+      // calculating the integral error
+      double integral_error = total_error * dt;
+
+      // Updating previous error
+      previous_error = current_error;
+
+      //updating total error
+      total_error += current_error;
+
+      // calculating the total output 
+      double output = (kp * current_error) + (kd * derivative_error)+ (ki * integral_error);
+
+      final_velocity += output;
+  }
+  return final_velocity; 
