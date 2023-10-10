@@ -22,13 +22,15 @@
  */
 int main() {
   // Initializing random pid constants, Can be modified upon tuning
-  double kp = 1.0;
-  double kd = 0.55;
-  double ki = 0.002;
+  double kp = 0.2;
+  double kd = 0.1;
+  double ki = 0.05;
   // An object of class pid controller is created with the constructor values
   PID::PIDCONTROLLER pid_control(kp, kd, ki);
-  double target_setpoint{2.0};
-  double actual_velocity{20.9};
+  double target_setpoint{100.0};
+  double actual_velocity{0.0};
+  double integral = 0.0; // Integral term accumulator
+  double previous_error = 0.0; // Previous error for derivative term
   double final_velcoity;
   // Calling the method compute of class pic to get the new velocity based on
   // target setpoint and actual velocity

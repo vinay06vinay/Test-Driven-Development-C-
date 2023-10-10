@@ -9,6 +9,12 @@
 Driver - Vinay Krishna Bukka (vinay06@umd.edu)
 
 Navigator - Suryavardhan Chappidi (chappidi@umd.edu)
+
+## Authors - TDD - Team 3 - Part 2
+Driver - Ishan Mahesh Kharat (ishanmk@umd.edu)
+
+Navigator - Akashkumar Parmar (akashsparm@umd.edu)
+
 ## Overview
 
 A PID Controller Implementation to implement pid function that calculates the velocity based on error.
