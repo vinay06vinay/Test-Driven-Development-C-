@@ -23,16 +23,16 @@
 int main() {
   // Initializing random pid constants, Can be modified upon tuning
   double kp = 1.0;
-  double kd = 0.55;
+  double kd = 0.15;
   double ki = 0.002;
   // An object of class pid controller is created with the constructor values
   PID::PIDCONTROLLER pid_control(kp, kd, ki);
-  double target_setpoint{2.0};
-  double actual_velocity{20.9};
+  double target_setpoint{10.0};
+  double actual_velocity{5.9};
   double final_velcoity;
   // Calling the method compute of class pic to get the new velocity based on
   // target setpoint and actual velocity
   final_velcoity = pid_control.compute(target_setpoint, actual_velocity);
-  std::cout << final_velcoity;
+  std::cout << "The Final Velocity is: " << final_velcoity;
   return final_velcoity;
 }
