@@ -74,7 +74,7 @@ int main() {
 
         // In a real system, you would apply the control signal to your system.
 
-        std::cout << "Time: " << time << " Actual Velocity: " << current_velocity << std::endl;
+        std::cout << "Time: " << time << " Actual Velocity: " << actual_velocity << std::endl;
     }
 
     return 0;
