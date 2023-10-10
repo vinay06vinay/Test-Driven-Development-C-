@@ -9,27 +9,32 @@
  * @return double
  */
 double PID::PIDCONTROLLER::compute(double target_setpoint,
-                                   double actual_velocity) {
+                                   double actual_velocity, double previous_error = 0;
+   double current_error = 0;
+   double total_error = 0;
+   double time = 10;
+   double final_velocity;
+   for (int dt = 1; dt <= time; dt++) {
   
 
-// Calculating the error
-    double error = target_velocity - actual_velocity;
+ // calculating the error
+      current_error = target_setpoint - actual_velocity;
 
-    // The value for the Proportional term
-    double Pout = kp * error;
+      // calculating the derivative error
+      double derivative_error = abs(current_error - previous_error);
 
-    // The value for the Integral term
-    integral += error * dt;
-    double Iout = ki * integral;
+      // calculating the integral error
+      double integral_error = total_error * dt;
 
-    // Finding Derivative term
-    double derivative = (error - pre_error) / dt;
-    double Dout = kd * derivative;
+      // Updating previous error
+      previous_error = current_error;
 
-    // Calculating total output
-    double output = Pout + Iout + Dout;
+      //updating total error
+      total_error += current_error;
 
-    return output;
+      // calculating the total output 
+      double output = (kp * current_error) + (kd * derivative_error)+ (ki * integral_error);
 
-  
-}
+      final_velocity += output;
+  }
+  return final_velocity;
