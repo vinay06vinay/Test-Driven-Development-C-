@@ -9,7 +9,7 @@
  * @return double
  */
 double PID::PIDCONTROLLER::compute(double target_setpoint,
-                                   double actual_velocity, ) {
+                                   double actual_velocity) {
   
 
 // Calculating the error
