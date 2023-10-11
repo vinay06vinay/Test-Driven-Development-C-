@@ -9,6 +9,11 @@
 Driver - Vinay Krishna Bukka (vinay06@umd.edu)
 
 Navigator - Suryavardhan Chappidi (chappidi@umd.edu)
+
+## Authors - TDD - Team 3 - Part 1
+Driver- Ishan Mahesh Kharat (ishanmk@umd.edu)
+
+Navigator - Akashkumar parmar (akashsparm@umd.edu)
 ## Overview
 
 A PID Controller Implementation to implement pid function that calculates the velocity based on error.
@@ -50,3 +55,7 @@ A PID Controller Implementation to implement pid function that calculates the ve
 ```
 
 ## Access The UML from below file in the directory "pid_uml.pdf"
+
+## Discussion:
+
+The test cases are verifying the entirety of the code. Both the test cases are ensuring that the output value is not a random output but the correct implementation of the code. To make the code much more robust, we can add some more test cases, however, 2 test cases suffice the purpose in this case.
