@@ -1,0 +1,21 @@
+ishan@ishan-QEMU-Virtual-Machine:~/Test-Driven-Development-ENPM808X$ sudo apt install cppcheck
+[sudo] password for ishan: 
+Sorry, try again.
+[sudo] password for ishan: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+cppcheck is already the newest version (2.7-1).
+0 upgraded, 0 newly installed, 0 to remove and 18 not upgraded.
+ishan@ishan-QEMU-Virtual-Machine:~/Test-Driven-Development-ENPM808X$ cppcheck --enable=all --std=c++11 -I include/ --suppress=missingInclude $( find . -name *.cpp | grep -vE -e "^./build/" )
+Checking app/main.cpp ...
+1/4 files checked 29% done
+Checking pid/pid_control.cpp ...
+pid/pid_control.cpp:18:11: style: The scope of the variable 'current_error' can be reduced. [variableScope]
+   double current_error = 0;
+2/4 files checked 63% done
+Checking test/main.cpp ...
+3/4 files checked 74% done
+Checking test/test.cpp ...
+4/4 files checked 100% done
+
