@@ -1,3 +1,13 @@
+/**
+ * @file pid_control.cpp
+ * @author Ishan Mahesh Kharat (Driver)
+ * @author Akashkumar Parmar (Navigator)
+ * @brief This method is used to initalize the private variables used ,
+ * constructor and method
+ * @version 0.1
+ * @date 2023-10-09
+ * @copyright Copyright (c) 2023
+
 #include "pid_control.hpp"
 
 #include <cmath>
